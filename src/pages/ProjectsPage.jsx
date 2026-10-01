@@ -7,7 +7,8 @@ import {
   ArrowRight, 
   HardHat, 
   Boxes, 
-  PhoneCall 
+  PhoneCall,
+  ChevronDown 
 } from 'lucide-react';
 import { PROJECT_CAPABILITIES, COMPANY_INFO } from '../data/companyData';
 
@@ -51,22 +52,41 @@ export default function ProjectsPage({ navigate, onOpenQuote }) {
       </section>
 
 
-      {/* Filter Tabs */}
-      <section className="bg-white border-b border-gray-200 sticky top-[72px] z-30 overflow-x-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-1 py-2.5">
-          {capabilityCategories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${
-                activeCategory === cat
-                  ? 'bg-[#071D36] text-[#E2B84A]'
-                  : 'text-gray-600 hover:text-[#071D36] hover:bg-gray-100'
-              }`}
+      {/* Filter Tabs - 100% Non-Scrollable */}
+      <section className="bg-white border-b border-gray-200 sticky top-[72px] z-30 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+          {/* Mobile Dropdown */}
+          <div className="md:hidden relative">
+            <select
+              value={activeCategory}
+              onChange={(e) => setActiveCategory(e.target.value)}
+              className="w-full bg-[#FAF9F5] border border-[#071D36] text-[#071D36] text-xs font-bold uppercase tracking-wider px-3 py-2 pr-8 appearance-none cursor-pointer focus:outline-none"
             >
-              {cat}
-            </button>
-          ))}
+              {capabilityCategories.map((cat) => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-[#071D36]">
+              <ChevronDown className="w-4 h-4" />
+            </div>
+          </div>
+
+          {/* Desktop Wrapped Pills (Zero sideways scrollbar) */}
+          <div className="hidden md:flex flex-wrap items-center gap-1.5 lg:gap-2">
+            {capabilityCategories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider transition-all border ${
+                  activeCategory === cat
+                    ? 'bg-[#071D36] text-[#E2B84A] border-[#071D36] shadow-sm'
+                    : 'text-gray-700 bg-white border-gray-200 hover:text-[#071D36] hover:border-[#071D36]'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 

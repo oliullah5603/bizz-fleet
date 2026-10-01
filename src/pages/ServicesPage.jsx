@@ -11,7 +11,9 @@ import {
   Wrench, 
   Boxes, 
   Compass, 
-  ArrowUpRight 
+  ArrowUpRight,
+  ChevronDown,
+  ArrowLeft 
 } from 'lucide-react';
 import { CORE_SERVICES, COMPANY_INFO } from '../data/companyData';
 
@@ -56,39 +58,96 @@ export default function ServicesPage({ serviceId, navigate, onOpenQuote }) {
         </div>
       </section>
 
-      {/* Quick Service Category Selector / Tabs */}
-      <section className="bg-[#0B2545] border-b border-white/10 sticky top-[72px] z-30 overflow-x-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-1 py-2">
-          <button
-            onClick={() => {
-              setSelectedService(null);
-              navigate('/services');
-            }}
-            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${
-              !selectedService 
-                ? 'bg-[#D6A63A] text-[#071D36]' 
-                : 'text-white/80 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            All Services
-          </button>
-          {CORE_SERVICES.map((srv) => (
+      {/* Quick Service Category Selector - 100% Non-Scrollable */}
+      <section className="bg-[#0B2545] border-b border-white/10 sticky top-[72px] z-30 shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+          
+          {/* Mobile & Small Screen: Dropdown Switcher (Zero sideways scrolling) */}
+          <div className="lg:hidden flex items-center justify-between gap-2">
             <button
-              key={srv.id}
               onClick={() => {
-                setSelectedService(srv);
-                navigate(`/services/${srv.id}`);
+                setSelectedService(null);
+                navigate('/services');
               }}
-              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-colors flex items-center gap-1.5 ${
-                selectedService?.id === srv.id
-                  ? 'bg-[#D6A63A] text-[#071D36]'
-                  : 'text-white/80 hover:text-white hover:bg-white/10'
+              className={`px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors shrink-0 ${
+                !selectedService 
+                  ? 'bg-[#D6A63A] text-[#071D36]' 
+                  : 'bg-[#071D36] text-white border border-white/20 hover:border-[#D6A63A]'
               }`}
             >
-              <span className="font-mono text-[10px] opacity-75">{srv.num}</span>
-              <span>{srv.title}</span>
+              All Services
             </button>
-          ))}
+
+            <div className="relative flex-1">
+              <select
+                value={selectedService?.id || ''}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (!val) {
+                    setSelectedService(null);
+                    navigate('/services');
+                  } else {
+                    const found = CORE_SERVICES.find(s => s.id === val);
+                    if (found) {
+                      setSelectedService(found);
+                      navigate(`/services/${found.id}`);
+                    }
+                  }
+                }}
+                className="w-full bg-[#071D36] border border-[#D6A63A] text-white text-xs font-bold uppercase tracking-wider px-3 py-2 pr-8 appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#D6A63A]"
+              >
+                <option value="">Select Service Division...</option>
+                {CORE_SERVICES.map((srv) => (
+                  <option key={srv.id} value={srv.id} className="bg-[#071D36] text-white">
+                    {srv.num} • {srv.title}
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-[#E2B84A]">
+                <ChevronDown className="w-4 h-4" />
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop & Large Screen: Multi-Line Wrapped Pill Grid (Never scrolls horizontally, all 8 divisions fully visible) */}
+          <div className="hidden lg:flex flex-wrap items-center gap-1.5 xl:gap-2">
+            <button
+              onClick={() => {
+                setSelectedService(null);
+                navigate('/services');
+              }}
+              className={`px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider transition-all border ${
+                !selectedService 
+                  ? 'bg-[#D6A63A] text-[#071D36] border-[#D6A63A] shadow' 
+                  : 'text-white/80 border-white/10 hover:text-white hover:bg-white/10 hover:border-white/30'
+              }`}
+            >
+              All Services Directory
+            </button>
+            {CORE_SERVICES.map((srv) => {
+              const isCurrent = selectedService?.id === srv.id;
+              return (
+                <button
+                  key={srv.id}
+                  onClick={() => {
+                    setSelectedService(srv);
+                    navigate(`/services/${srv.id}`);
+                  }}
+                  className={`px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 border ${
+                    isCurrent
+                      ? 'bg-[#D6A63A] text-[#071D36] border-[#D6A63A] shadow-md font-extrabold'
+                      : 'text-white/80 border-white/10 hover:text-white hover:bg-white/10 hover:border-white/30'
+                  }`}
+                >
+                  <span className={`font-mono text-[10px] ${isCurrent ? 'text-[#071D36] font-black' : 'text-[#E2B84A]'}`}>
+                    {srv.num}
+                  </span>
+                  <span>{srv.title}</span>
+                </button>
+              );
+            })}
+          </div>
+
         </div>
       </section>
 
