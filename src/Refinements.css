@@ -1067,10 +1067,6 @@ footer .button-gold:hover {
 .intro-hero .button-outline:hover {
   color: white;
 }
-.intro-hero + .section:not(.light),
-.service-hero + .section:not(.light) {
-  padding-top: var(--section-space);
-}
 
 /* Shared page spacing: desktop, tablet, and mobile. */
 :root {
@@ -1103,6 +1099,12 @@ footer .wrap {
 #main > section,
 #main > .principles {
   padding-block: var(--section-space);
+}
+/* Consecutive sections with the same surface share one vertical gap. */
+#main > :is(.intro-hero, .service-hero, .section:not(.light), .cta-section)
+  + :is(.intro-hero, .service-hero, .section:not(.light), .cta-section),
+#main > .section.light + .section.light {
+  padding-top: 0;
 }
 #main > section:not(.wrap),
 #main > .principles {
@@ -1523,9 +1525,9 @@ footer .wrap {
 /* Full background photograph with navy overlay on the homepage. */
 #main > .home-background-hero {
   background-color: var(--navy);
-  background-image: linear-gradient(90deg, rgba(7, 29, 54, .96) 0%, rgba(7, 29, 54, .88) 42%, rgba(7, 29, 54, .58) 100%), url('/images/dhaka-hatirjheel.webp');
+  background-image: linear-gradient(90deg, rgba(7, 29, 54, .96) 0%, rgba(7, 29, 54, .88) 42%, rgba(7, 29, 54, .58) 100%), url('/images/chattogram-container-yard.webp');
   background-size: cover;
-  background-position: center 35%;
+  background-position: center 62%;
 }
 .home-background-hero .hero-grid {
   display: block;
@@ -1566,7 +1568,7 @@ footer .wrap {
 @media (max-width: 700px) {
   .home-background-hero h1 { font-size: 40px; }
   #main > .home-background-hero {
-    background-image: linear-gradient(90deg, rgba(7, 29, 54, .94), rgba(7, 29, 54, .8)), url('/images/dhaka-hatirjheel.webp');
+    background-image: linear-gradient(90deg, rgba(7, 29, 54, .94), rgba(7, 29, 54, .8)), url('/images/chattogram-container-yard.webp');
     background-position: 65% center;
   }
   .home-background-hero .home-hero-service-links {

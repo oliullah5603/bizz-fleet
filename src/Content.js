@@ -1,92 +1,95 @@
 export const photos = {
-  workforce: {
-    file: "stock-workforce.webp",
-    title: "Site workforce",
-    alt: "Workers wearing safety helmets and high visibility clothing",
-    author: "Hasan Gulec",
-    source: "https://www.pexels.com/photo/men-wearing-safety-helmets-11139140/",
-    license: "Pexels License",
-    url: "https://www.pexels.com/license/",
+  "workforce": {
+    "file": "construction_in_dhaka.webp",
+    "title": "Site work in Dhaka",
+    "alt": "Workers seen from a distance at a building site in Dhaka, Bangladesh",
+    "author": "Nurunnaby Chowdhury (Hasive)",
+    "source": "https://commons.wikimedia.org/wiki/File:Construction_in_Dhaka.jpg",
+    "license": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
-  office: {
-    file: "dhaka-office-files.webp",
-    title: "Office files in Dhaka",
-    alt: "Office files on shelves in Dhaka, Bangladesh",
-    author: "Nasir Khan Saikat",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Office_files_(26974741371).jpg",
-    license: "CC BY-SA 2.0",
-    url: "https://creativecommons.org/licenses/by-sa/2.0/",
+  "office": {
+    "file": "dhaka-office-files.webp",
+    "title": "Office files in Dhaka",
+    "alt": "Office files on shelves in Dhaka, Bangladesh",
+    "author": "Nasir Khan Saikat",
+    "source": "https://commons.wikimedia.org/wiki/File:Office_files_(26974741371).jpg",
+    "license": "CC BY-SA 2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/"
   },
-  construction: {
-    file: "stock-construction.webp",
-    title: "Building construction",
-    alt: "Concrete building under construction with a tower crane",
-    author: "Yogendra Singh",
-    source:
-      "https://www.pexels.com/photo/high-rise-concrete-building-under-construction-9370034/",
-    license: "Pexels License",
-    url: "https://www.pexels.com/license/",
+  "construction": {
+    "file": "metro-construction.webp",
+    "title": "Metro construction in Dhaka",
+    "alt": "Elevated metro construction equipment and concrete piers in Dhaka, Bangladesh",
+    "author": "Wasiul Bahar",
+    "source": "https://commons.wikimedia.org/wiki/File:Metro_construction_site_at_dhaka_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
-  materials: {
-    file: "stock-materials.webp",
-    title: "Construction materials",
-    alt: "Red bricks ready for building and construction work",
-    author: "Muhammad Asnawi",
-    source:
-      "https://www.pexels.com/photo/pile-of-red-bricks-for-construction-in-indonesia-35239414/",
-    license: "Pexels License",
-    url: "https://www.pexels.com/license/",
+  "materials": {
+    "file": "brick-field-bangladesh.webp",
+    "title": "Brick yard in Bangladesh",
+    "alt": "Stacks of clay bricks at a brick yard in Bangladesh",
+    "author": "Faizul Latif Chowdhury",
+    "source": "https://commons.wikimedia.org/wiki/File:Brick_Field_Bangladesh.JPG",
+    "license": "CC BY-SA 3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0/"
   },
-  procurement: {
-    file: "chattogram-containers.webp",
-    title: "Container handling at Chattogram Port",
-    alt: "Shipping containers and handling equipment at Chattogram Port, Bangladesh",
-    author: "Roy Upam",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Stacking_Intermodal_container_in_Port_of_Chittagong_(02).jpg",
-    license: "CC BY-SA 4.0",
-    url: "https://creativecommons.org/licenses/by-sa/4.0/",
+  "procurement": {
+    "file": "chattogram-containers.webp",
+    "title": "Container handling at Chattogram Port",
+    "alt": "Shipping containers and handling equipment at Chattogram Port, Bangladesh",
+    "author": "Roy Upam",
+    "source": "https://commons.wikimedia.org/wiki/File:Stacking_Intermodal_container_in_Port_of_Chittagong_(02).jpg",
+    "license": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
-  equipment: {
-    file: "stock-excavator.webp",
-    title: "Construction equipment",
-    alt: "Yellow excavator at a construction site",
-    author: "Theuns van der Westhuizen",
-    source:
-      "https://www.pexels.com/photo/excavator-at-construction-site-14452156/",
-    license: "Pexels License",
-    url: "https://www.pexels.com/license/",
+  "equipment": {
+    "file": "cumilla-excavator.webp",
+    "title": "Excavator in Cumilla",
+    "alt": "A Sumitomo excavator at work in Cumilla, Bangladesh",
+    "author": "Ibrahim Husain Meraj",
+    "source": "https://commons.wikimedia.org/wiki/File:Sumitomo_S265FA_excavator_in_work_in_Comilla_2018-01-13_01.jpg",
+    "license": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
-  delivery: {
-    file: "stock-logistics.webp",
-    title: "Goods transport",
-    alt: "White freight truck travelling on a road",
-    author: "Alex Surd",
-    source: "https://www.pexels.com/photo/a-white-truck-on-the-road-10963747/",
-    license: "Pexels License",
-    url: "https://www.pexels.com/license/",
+  "delivery": {
+    "file": "dhaka-freight-truck.webp",
+    "title": "Freight truck near Dhaka",
+    "alt": "A decorated freight truck at a construction site near Dhaka, Bangladesh",
+    "author": "Gary Todd",
+    "source": "https://commons.wikimedia.org/wiki/File:Bangladeshi_truck_Near_Dhaka.jpg",
+    "license": "CC0 1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
-  meeting: {
-    file: "stock-business-meeting.webp",
-    title: "Project planning discussion",
-    alt: "Professionals discussing a project around a meeting table",
-    author: "Edmond Dantès",
-    source:
-      "https://www.pexels.com/photo/people-having-a-meeting-at-the-office-4344116/",
-    license: "Pexels License",
-    url: "https://www.pexels.com/license/",
+  "meeting": {
+    "file": "dhaka-office-interior.webp",
+    "title": "Office interior in Dhaka",
+    "alt": "An unoccupied office seating area in Dhaka, Bangladesh",
+    "author": "Mehraz Morshed",
+    "source": "https://wordpress.org/photos/photo/12065e36d9/",
+    "license": "CC0 1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
-  city: {
-    file: "dhaka-hatirjheel.webp",
-    title: "Hatirjheel, Dhaka",
-    alt: "Hatirjheel lake and surrounding buildings in Dhaka, Bangladesh",
-    author: "ASaber91",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Hatirjheel,_Dhaka,_Bangladesh_(35715286874).jpg",
-    license: "CC BY 2.0",
-    url: "https://creativecommons.org/licenses/by/2.0/",
+  "city": {
+    "file": "dhaka-hatirjheel.webp",
+    "title": "Hatirjheel, Dhaka",
+    "alt": "Hatirjheel lake and surrounding buildings in Dhaka, Bangladesh",
+    "author": "ASaber91",
+    "source": "https://commons.wikimedia.org/wiki/File:Hatirjheel,_Dhaka,_Bangladesh_(35715286874).jpg",
+    "license": "CC BY 2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/"
   },
+  "homeHero": {
+    "file": "chattogram-container-yard.webp",
+    "title": "Container yard at Chattogram Port",
+    "alt": "Container handling equipment and freight vehicles at Chattogram Port, Bangladesh",
+    "author": "Rafaell Russell",
+    "source": "https://commons.wikimedia.org/wiki/File:Container_yard_in_Port_Of_Chittagong.JPG",
+    "license": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Resized and converted to WebP; displayed with a navy overlay and responsive cropping"
+  }
 };
 export const services = [
   {
